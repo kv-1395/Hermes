@@ -11,3 +11,5 @@ User explicitly asked for casual/informal conversation style ("خودمونی ح
 NEVER save tokens, passwords, or credentials (or patterns of them) to memory. User got very upset when token-related info was saved. Keep sensitive data only in scripts/config, never in memory entries.
 §
 User prefers action over narration — gets frustrated when I say "I'll do it" repeatedly without actually doing it. Just execute immediately.
+§
+Building VPN config panel "رفرش" (Refresh) — deployed on Netlify. GitHub repo: kv-1395/Hermes (public). User prefers text buttons over icon-only buttons (Font Awesome CDN sometimes fails to load). Panel has: create/copy/delete/toggle configs, users, servers, ping, logs.
