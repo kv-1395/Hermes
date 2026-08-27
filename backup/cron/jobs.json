@@ -32,7 +32,7 @@
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-08-18T06:07:14.196734+00:00",
-      "next_run_at": "2026-08-27T20:12:53.412375+00:00",
+      "next_run_at": "2026-08-28T08:13:42.857674+00:00",
       "last_run_at": "2026-08-27T08:12:53.412375+00:00",
       "last_status": "error",
       "last_error": "Script exited with code 128\nstdout:\n=== Hermes Backup - 2026-08-27_08-12-51 ===\nBacking up...\n  ✓ memories/\n  ✓ skills/\n  ✓ config.yaml\n  ✓ SOUL.md\n  ✓ kanban.db\n  ✓ state.db\n  ✓ cron/\n  ✓ platforms/\n  ✓ hooks/\n[gh-pages 82c5486] Backup: 2026-08-27_08-12-51\n 6 files changed, 35 insertions(+), 11 deletions(-)\n create mode 100644 backup/cron/output/a1f9edf8eab6/2026-08-26_20-12-23.md\nfatal: could not read Password for 'https://***@github.com': No such device or address",
@@ -48,8 +48,11 @@
       },
       "enabled_toolsets": null,
       "workdir": null,
-      "fire_claim": null
+      "fire_claim": {
+        "at": "2026-08-27T20:13:42.873947+00:00",
+        "by": "aebb86399c6e:2:344ce8b9b8af45fe889ca6535e1190db"
+      }
     }
   ],
-  "updated_at": "2026-08-27T08:12:53.412537+00:00"
+  "updated_at": "2026-08-27T20:13:42.874149+00:00"
 }
