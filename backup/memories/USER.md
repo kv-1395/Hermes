@@ -1,14 +1,12 @@
-Persian (Farsi) speaker. Communicates casually with lots of emoji and repetition for emphasis. Prefers immediate action over narration. Comfortable with casual/informal tone. Checks system health frequently for reassurance.
+Persian (Farsi) speaker. Casual, emoji-heavy, repetition for emphasis. Prefers action over narration. Checks system health frequently.
 §
 User wants: when GitHub PAT expires during cron backup, notify user in chat and ask for new token. User will provide replacement token when asked.
 §
-Do NOT save tokens, secrets, or credentials to memory. Only operational notes without referencing actual values.
+Samsung phone, Good Lock blocked in region. Building VPN panels. GitHub repo kv-1395/Hermes. GitHub Pages works, Netlify anonymous limited. Server has port restrictions.
 §
-User uses Samsung phone (wanted Good Lock app). Located in a region where Good Lock is blocked on Google Play Store.
+Casual tone (خودمونی). Action over narration — frustrated by promises without execution.
 §
-User explicitly asked for casual/informal conversation style ("خودمونی حرف بزنی"). Prefers friendly banter over formal responses.
-§
-NEVER save tokens, passwords, or credentials (or patterns of them) to memory. User got very upset when token-related info was saved. Keep sensitive data only in scripts/config, never in memory entries.
+NEVER save tokens/credentials to memory. User got very upset. Keep only in scripts/config.
 §
 User prefers action over narration — gets frustrated when I say "I'll do it" repeatedly without actually doing it. Just execute immediately.
 §

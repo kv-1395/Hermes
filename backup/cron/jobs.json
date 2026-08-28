@@ -25,19 +25,19 @@
       "schedule_display": "every 720m",
       "repeat": {
         "times": null,
-        "completed": 22
+        "completed": 23
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-08-18T06:07:14.196734+00:00",
-      "next_run_at": "2026-08-28T22:47:34.021184+00:00",
-      "last_run_at": "2026-08-28T08:14:25.428695+00:00",
-      "last_status": "error",
-      "last_error": "Script exited with code 128\nstdout:\n=== Hermes Backup - 2026-08-28_08-14-23 ===\nYour branch is ahead of 'origin/main' by 1 commit.\n  (use \"git push\" to publish your local commits)\nAlready up to date.\nBacking up...\n  ✓ memories/\n  ✓ skills/\n  ✓ config.yaml\n  ✓ SOUL.md\n  ✓ kanban.db\n  ✓ state.db\n  ✓ cron/\n  ✓ platforms/\n  ✓ hooks/\n[main 4952645] Backup: 2026-08-28_08-14-23\n 7 files changed, 13 insertions(+), 10 deletions(-)\nfatal: could not read Password for 'https://***@github.com': No such device or address",
+      "next_run_at": "2026-08-29T10:47:38.505176+00:00",
+      "last_run_at": "2026-08-28T10:47:36.674853+00:00",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
-      "failure_streak": 8,
+      "failure_streak": 0,
       "deliver": "origin",
       "origin": {
         "platform": "telegram",
@@ -49,10 +49,10 @@
       "enabled_toolsets": null,
       "workdir": null,
       "fire_claim": {
-        "at": "2026-08-28T10:47:34.056377+00:00",
-        "by": "aebb86399c6e:2:b4d4d9685a0141039aa56f6a8147b075"
+        "at": "2026-08-28T22:47:38.509455+00:00",
+        "by": "aebb86399c6e:2:b539a9092fa34504858627809a62a0d3"
       }
     }
   ],
-  "updated_at": "2026-08-28T10:47:34.056865+00:00"
+  "updated_at": "2026-08-28T22:47:38.509596+00:00"
 }
