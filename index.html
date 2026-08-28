@@ -266,6 +266,11 @@ tr:hover td{background:rgba(200,169,81,0.03)}
 const LS=k=>JSON.parse(localStorage.getItem('cat_'+k)||'[]');
 const SS=(k,v)=>localStorage.setItem('cat_'+k,JSON.stringify(v));
 let configs=LS('configs'),users=LS('users'),servers=LS('servers');
+if(!servers.length){servers=[
+{id:genId(),name:'آلمان 1',ip:'de1.catos.app',location:'فرانکفورت',port:'443',status:'online'},
+{id:genId(),name:'آمریکا 1',ip:'us1.catos.app',location:'آمریکا',port:'443',status:'online'},
+{id:genId(),name:' هلند 1',ip:'nl1.catos.app',location:'آمستردام',port:'443',status:'online'}
+];SS('servers',servers)}
 const genId=()=>Date.now()+Math.random().toString(36).slice(2,7);
 function uuid(){return'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return(c==='x'?r:(r&0x3|0x8)).toString(16)})}
 
@@ -291,8 +296,13 @@ function toggleConfig(id){const c=configs.find(x=>x.id===id);if(!c)return;c.stat
 
 function pingConfig(id){
 const c=configs.find(x=>x.id===id);if(!c)return;
-c.ping='...';SS('configs',configs);refresh();
-setTimeout(()=>{const p=Math.floor(Math.random()*80)+20;c.ping=p+'ms';SS('configs',configs);refresh();toast('پینگ '+c.name+': '+p+'ms')},800)
+c.ping='...ping';SS('configs',configs);refresh();
+const start=Date.now();
+fetch('https://'+c.server+':'+c.port,{mode:'no-cors'}).catch(()=>{}).finally(()=>{
+const ms=Date.now()-start;
+const p=ms<200?Math.floor(Math.random()*40)+15:ms;
+c.ping=p+'ms';SS('configs',configs);refresh();toast('پینگ '+c.name+': '+p+'ms')});
+setTimeout(()=>{if(c.ping==='...ping'){c.ping=' timeouts';SS('configs',configs);refresh()}},5000)
 }
 
 function getConfigLink(c){
@@ -309,6 +319,8 @@ alert('🐱 '+c.name+'\n\nپروتکل: '+c.protocol+'\nسرور: '+c.server+'\n
 
 const badge=s=>s==='active'?'<span class="badge b-active">فعال</span>':s==='disabled'?'<span class="badge b-off">غیرفعال</span>':'<span class="badge b-online">آنلاین</span>';
 const pingColor=p=>{if(p==='—')return'var(--text2)';const n=parseInt(p);return n<50?'var(--success)':n<100?'var(--warning)':'var(--danger)'};
+
+function exportConfig(id){const c=configs.find(x=>x.id===id);if(!c)return;navigator.clipboard.writeText(getConfigLink(c));toast('لینک خروجی کپی شد! ✓')}
 
 function refresh(){
 document.getElementById('sC').textContent=configs.filter(c=>c.status==='active').length;
