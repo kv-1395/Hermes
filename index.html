@@ -266,7 +266,7 @@ tr:hover td{background:rgba(200,169,81,0.03)}
 const LS=k=>JSON.parse(localStorage.getItem('cat_'+k)||'[]');
 const SS=(k,v)=>localStorage.setItem('cat_'+k,JSON.stringify(v));
 let configs=LS('configs'),users=LS('users'),servers=LS('servers');
-if(!servers.length){servers=[
+if(!servers||!servers.length){servers=[
 {id:genId(),name:'آلمان 1',ip:'de1.catos.app',location:'فرانکفورت',port:'443',status:'online'},
 {id:genId(),name:'آمریکا 1',ip:'us1.catos.app',location:'آمریکا',port:'443',status:'online'},
 {id:genId(),name:' هلند 1',ip:'nl1.catos.app',location:'آمستردام',port:'443',status:'online'}
@@ -277,7 +277,7 @@ function uuid(){return'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>
 function doLogin(e){e.preventDefault();if(document.getElementById('loginPass').value==='admin.18.19'){document.getElementById('loginPage').style.display='none';document.getElementById('dash').style.display='block';refresh()}else alert('رمز اشتباه!')}
 function doLogout(){document.getElementById('dash').style.display='none';document.getElementById('loginPage').style.display='flex'}
 function go(id,el){document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));el.classList.add('active')}
-function openModal(id){document.getElementById(id).classList.add('show');document.getElementById('cResult').style.display='none';document.getElementById('cUUID').value=uuid();const sel=document.getElementById('cSrv');sel.innerHTML=servers.length?servers.map(s=>'<option value="'+s.ip+'">'+s.name+' ('+s.ip+')</option>').join(''):'<option>سروری نیست</option>'}
+function openModal(id){document.getElementById(id).classList.add('show');document.getElementById('cResult').style.display='none';document.getElementById('cUUID').value=uuid();const sel=document.getElementById('cSrv');if(!servers||!servers.length){servers=[{id:genId(),name:'آلمان 1',ip:'de1.catos.app',location:'فرانکفورت',port:'443',status:'online'},{id:genId(),name:'آمریکا 1',ip:'us1.catos.app',location:'آمریکا',port:'443',status:'online'},{id:genId(),name:' هلند 1',ip:'nl1.catos.app',location:'آمستردام',port:'443',status:'online'}];SS('servers',servers)}servers.map(s=>'<option value="'+s.ip+'">'+s.name+' ('+s.ip+')</option>').join(''):'<option>سروری نیست</option>'}
 function closeModal(id){document.getElementById(id).classList.remove('show')}
 function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)}
 
