@@ -1,6 +1,6 @@
 Environment: port 22 blocked — all git operations must use HTTPS. HOME=/data, hermes config at /data/.hermes. GitHub backup repo: kv-1395/Hermes (token stored in ~/.hermes/scripts/hermes_backup.sh).
 §
-Hermes backup cron: hermes-backup-12h (job a1f9edf8eab6). Every 12h → github.com/kv-1395/Hermes (private). Script: /data/.hermes/scripts/hermes_backup.sh. If auth fails, ask user for new token.
+Backup script: exclude state.db and kanban.db from backup — they contain old GitHub tokens and GitHub Push Protection blocks pushes. Also need to git rm previously committed copies from the repo.
 §
 Do NOT save tokens, secrets, or credentials to memory. Only operational notes without referencing actual values.
 §
@@ -10,4 +10,4 @@ Quick static deploy: npx netlify-cli deploy --dir=. --prod --allow-anonymous. Fr
 §
 GitHub repo: github.com/kv-1395/Hermes (public). Backup cron job (hermes-backup-12h) runs every 12h, pushes to main branch. Script at ~/.hermes/scripts/hermes_backup.sh.
 §
-Building VPN config panel called "رفرش" (Refresh) for user. Deployed on Netlify (anonymous). Features: create/delete/copy/toggle VPN configs (VLESS/VMess/Trojan/Shadowsocks), manage users & servers, ping, logs. User wants text buttons not just icons (Font Awesome doesn't always load).
+User dropped the VPN panel project ("رفرش"). Don't bring it up unless asked.
