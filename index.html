@@ -7,341 +7,263 @@
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--gold:#C8A951;--gold-dark:#A8893D;--gold-light:#E8D48B;--bg:#F5F5F0;--white:#FFFFFF;--card:#FFFFFF;--border:#E5E5D8;--text:#1A1A1A;--text2:#6B6B6B;--success:#22C55E;--danger:#EF4444;--warning:#F59E0B;--shadow:0 2px 12px rgba(0,0,0,0.06)}
+:root{--gold:#C8A951;--gold-dark:#A8893D;--gold-light:#E8D48B;--bg:#F5F5F0;--white:#FFF;--card:#FFF;--border:#E5E5D8;--text:#1A1A1A;--text2:#6B6B6B;--ok:#22C55E;--no:#EF4444;--warn:#F59E0B;--sh:0 2px 12px rgba(0,0,0,.06)}
 body{font-family:'Vazirmatn',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
-
-/* LOGIN */
-.login-page{display:flex;align-items:center;justify-content:center;min-height:100vh;background:linear-gradient(135deg,#FAFAF5 0%,#F0EFE5 100%)}
-.login-box{background:var(--card);border:2px solid var(--gold);border-radius:24px;padding:50px 40px;width:420px;max-width:92vw;box-shadow:0 8px 40px rgba(200,169,81,0.15);text-align:center}
-.login-logo{margin-bottom:30px}
-.login-logo .cat-icon{font-size:72px;display:block;margin-bottom:10px}
-.login-logo h1{font-size:36px;font-weight:900;color:var(--gold)}
-.login-logo small{color:var(--text2);font-size:13px;background:var(--gold);color:#fff;padding:4px 12px;border-radius:20px;margin-top:8px;display:inline-block}
-.form-group{margin-bottom:20px;text-align:right}
-.form-group label{display:block;margin-bottom:6px;font-size:13px;color:var(--text2)}
-.form-group input,.form-group select{width:100%;padding:13px 16px;background:var(--bg);border:1px solid var(--border);border-radius:12px;font-family:'Vazirmatn',sans-serif;font-size:14px;color:var(--text);transition:all .3s}
-.form-group input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,169,81,0.15)}
-.btn{padding:13px 24px;border:none;border-radius:12px;font-family:'Vazirmatn',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .3s}
-.btn-full{width:100%}
-.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#fff}
-.btn-gold:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(200,169,81,0.35)}
-.btn-success{background:var(--success);color:#fff}
-.btn-danger{background:var(--danger);color:#fff}
-.btn-ghost{background:var(--bg);color:var(--text2);border:1px solid var(--border)}
-.btn-sm{padding:8px 14px;font-size:12px;border-radius:10px}
-
-/* DASHBOARD */
-.dashboard{display:none;min-height:100vh}
-.sidebar{position:fixed;right:0;top:0;width:240px;height:100vh;background:var(--card);border-left:1px solid var(--border);padding:24px 16px;z-index:100;display:flex;flex-direction:column}
-.s-logo{text-align:center;padding-bottom:20px;border-bottom:1px solid var(--border);margin-bottom:20px}
-.s-logo .cat-sm{font-size:40px}
-.s-logo h2{font-size:22px;font-weight:900;color:var(--gold)}
-.s-logo small{color:var(--text2);font-size:11px}
-.nav-item{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;cursor:pointer;transition:all .2s;color:var(--text2);font-size:13px;margin-bottom:4px}
-.nav-item:hover{background:rgba(200,169,81,0.08);color:var(--text)}
-.nav-item.active{background:linear-gradient(135deg,rgba(200,169,81,0.15),rgba(200,169,81,0.05));color:var(--gold);font-weight:600}
-.nav-bottom{margin-top:auto}
-.main{margin-right:240px;padding:28px;min-height:100vh}
-.page-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
-.page-header h1{font-size:20px;font-weight:700}
-
-/* STATS */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
-.stat{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;transition:all .3s}
-.stat:hover{border-color:var(--gold);box-shadow:var(--shadow)}
-.stat .icon{font-size:24px;margin-bottom:10px}
-.stat .val{font-size:28px;font-weight:800;color:var(--gold)}
-.stat .lbl{font-size:11px;color:var(--text2);margin-top:2px}
-
-/* TABLE */
-.card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden}
-.card-head{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
-.card-head h3{font-size:14px;font-weight:600}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+.lp{display:flex;align-items:center;justify-content:center;min-height:100vh;background:linear-gradient(135deg,#FAFAF5,#F0EFE5)}
+.lb{background:var(--card);border:2px solid var(--gold);border-radius:24px;padding:50px 40px;width:420px;max-width:92vw;box-shadow:0 8px 40px rgba(200,169,81,.15);text-align:center}
+.ll .ci{font-size:72px;display:block;margin-bottom:10px}
+.ll h1{font-size:36px;font-weight:900;color:var(--gold)}
+.ll small{color:#fff;background:var(--gold);padding:4px 12px;border-radius:20px;margin-top:8px;display:inline-block;font-size:13px}
+.fg{margin-bottom:20px;text-align:right}
+.fg label{display:block;margin-bottom:6px;font-size:13px;color:var(--text2)}
+.fg input,.fg select,.fg textarea{width:100%;padding:13px 16px;background:var(--bg);border:1px solid var(--border);border-radius:12px;font-family:'Vazirmatn',sans-serif;font-size:14px;color:var(--text);transition:.3s}
+.fg input:focus,.fg select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,169,81,.15)}
+.btn{padding:13px 24px;border:none;border-radius:12px;font-family:'Vazirmatn',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:.3s}
+.bf{width:100%}.bg{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#fff}
+.bg:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(200,169,81,.35)}
+.bo{background:var(--ok);color:#fff}.bd{background:var(--no);color:#fff}.bh{background:var(--bg);color:var(--text2);border:1px solid var(--border)}
+.bs{padding:8px 14px;font-size:12px;border-radius:10px}
+.dash{display:none;min-height:100vh}
+.sb{position:fixed;right:0;top:0;width:240px;height:100vh;background:var(--card);border-left:1px solid var(--border);padding:24px 16px;z-index:100;display:flex;flex-direction:column}
+.sl{text-align:center;padding-bottom:20px;border-bottom:1px solid var(--border);margin-bottom:20px}
+.sl .cs{font-size:40px}.sl h2{font-size:22px;font-weight:900;color:var(--gold)}.sl small{color:var(--text2);font-size:11px}
+.ni{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;cursor:pointer;transition:.2s;color:var(--text2);font-size:13px;margin-bottom:4px}
+.ni:hover{background:rgba(200,169,81,.08);color:var(--text)}
+.ni.a{background:linear-gradient(135deg,rgba(200,169,81,.15),rgba(200,169,81,.05));color:var(--gold);font-weight:600}
+.nb{margin-top:auto}
+.mn{margin-right:240px;padding:28px;min-height:100vh}
+.ph{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.ph h1{font-size:20px;font-weight:700}
+.sts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
+.st{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;transition:.3s}
+.st:hover{border-color:var(--gold);box-shadow:var(--sh)}
+.st .ic{font-size:24px;margin-bottom:10px}.st .vl{font-size:28px;font-weight:800;color:var(--gold)}.st .lb{font-size:11px;color:var(--text2);margin-top:2px}
+.cd{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.ch{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.ch h3{font-size:14px;font-weight:600}
 table{width:100%;border-collapse:collapse}
 th,td{padding:12px 18px;text-align:right;font-size:12px;border-bottom:1px solid var(--border)}
 th{color:var(--text2);font-weight:500;font-size:11px}
-tr:last-child td{border-bottom:none}
-tr:hover td{background:rgba(200,169,81,0.03)}
-.badge{padding:3px 10px;border-radius:20px;font-size:10px;font-weight:600}
-.b-active{background:rgba(34,197,94,0.1);color:var(--success)}
-.b-off{background:rgba(239,68,68,0.1);color:var(--danger)}
-.b-online{background:rgba(200,169,81,0.15);color:var(--gold)}
-.actions{display:flex;gap:5px;flex-wrap:nowrap}
-.ping-val{font-size:12px;font-weight:600;direction:ltr}
-
-/* MODAL */
-.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:200;align-items:center;justify-content:center;backdrop-filter:blur(3px)}
-.modal-bg.show{display:flex}
-.modal{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px;width:520px;max-width:92vw;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.15)}
-.modal h2{margin-bottom:20px;font-size:16px;color:var(--gold)}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.modal-foot{display:flex;gap:12px;margin-top:20px}
-.modal-foot .btn{flex:1}
-
-/* TOAST */
-.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;padding:12px 24px;border-radius:12px;font-size:13px;font-weight:600;box-shadow:0 8px 30px rgba(0,0,0,0.15);z-index:300;opacity:0;transition:opacity .3s}
-.toast.show{opacity:1}
-
-.sec{display:none}.sec.active{display:block}
-.api-box{background:var(--bg);border:1px solid var(--gold);border-radius:12px;padding:16px;margin-top:12px;font-family:monospace;font-size:12px;direction:ltr;word-break:break-all;cursor:pointer;transition:all .3s}
-.api-box:hover{background:rgba(200,169,81,0.08)}
-.api-label{color:var(--gold);font-size:12px;font-family:'Vazirmatn',sans-serif;direction:rtl;margin-bottom:6px}
-
-@media(max-width:768px){.sidebar{width:60px;padding:16px 8px}.sidebar .s-logo h2,.nav-item span:not(.nav-emoji){display:none}.nav-item{justify-content:center}.main{margin-right:60px}.stats{grid-template-columns:1fr 1fr}.row2{grid-template-columns:1fr}}
+tr:last-child td{border-bottom:none}tr:hover td{background:rgba(200,169,81,.03)}
+.bg2{padding:3px 10px;border-radius:20px;font-size:10px;font-weight:600}
+.ba{background:rgba(34,197,94,.1);color:var(--ok)}.bo2{background:rgba(239,68,68,.1);color:var(--no)}.bn{background:rgba(200,169,81,.15);color:var(--gold)}
+.ac{display:flex;gap:5px;flex-wrap:nowrap}
+.pv{font-size:12px;font-weight:600;direction:ltr}
+.mb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:200;align-items:center;justify-content:center;backdrop-filter:blur(3px)}
+.mb.show{display:flex}
+.mo{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px;width:520px;max-width:92vw;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.15)}
+.mo h2{margin-bottom:20px;font-size:16px;color:var(--gold)}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mf{display:flex;gap:12px;margin-top:20px}.mf .btn{flex:1}
+.tst{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;padding:12px 24px;border-radius:12px;font-size:13px;font-weight:600;box-shadow:0 8px 30px rgba(0,0,0,.15);z-index:300;opacity:0;transition:opacity .3s}
+.tst.show{opacity:1}
+.sc{display:none}.sc.a{display:block}
+.ab{background:var(--bg);border:1px solid var(--gold);border-radius:12px;padding:16px;margin-top:12px;font-family:monospace;font-size:12px;direction:ltr;word-break:break-all;cursor:pointer;transition:.3s}
+.ab:hover{background:rgba(200,169,81,.08)}
+.al{color:var(--gold);font-size:12px;font-family:'Vazirmatn',sans-serif;direction:rtl;margin-bottom:6px}
+@media(max-width:768px){.sb{width:60px;padding:16px 8px}.sl h2,.ni span:not(.ne){display:none}.ni{justify-content:center}.mn{margin-right:60px}.sts{grid-template-columns:1fr 1fr}.r2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-<!-- LOGIN -->
-<div class="login-page" id="loginPage">
-<div class="login-box">
-<div class="login-logo">
-<span class="cat-icon">🐱</span>
-<h1>CAT VPN</h1>
-<small>V2RayNG</small>
-</div>
-<form onsubmit="doLogin(event)">
-<div class="form-group">
-<label>رمز عبور</label>
-<input type="password" id="loginPass" placeholder="رمز عبور را وارد کنید" required>
-</div>
-<button class="btn btn-gold btn-full" type="submit">🐱 ورود به پنل</button>
+<div class="lp" id="lp">
+<div class="lb">
+<div class="ll"><span class="ci">🐱</span><h1>CAT VPN</h1><small>V2RayNG</small></div>
+<form onsubmit="login(event)">
+<div class="fg"><label>رمز عبور</label><input type="password" id="pw" placeholder="رمز را وارد کنید" required></div>
+<button class="btn bg bf" type="submit">🐱 ورود</button>
 </form>
 </div>
 </div>
 
-<!-- DASHBOARD -->
-<div class="dashboard" id="dash">
-<div class="sidebar">
-<div class="s-logo"><span class="cat-sm">🐱</span><h2>CAT VPN</h2><small>V2RayNG Panel</small></div>
-<div class="nav-item active" onclick="go('overview',this)"><span class="nav-emoji">📊</span><span>داشبورد</span></div>
-<div class="nav-item" onclick="go('configs',this)"><span class="nav-emoji">🔑</span><span>کانفینگ‌ها</span></div>
-<div class="nav-item" onclick="go('apilink',this)"><span class="nav-emoji">📡</span><span>API لینک</span></div>
-<div class="nav-item" onclick="go('users',this)"><span class="nav-emoji">👥</span><span>کاربران</span></div>
-<div class="nav-item" onclick="go('servers',this)"><span class="nav-emoji">🖥️</span><span>سرورها</span></div>
-<div class="nav-item" onclick="go('settings',this)"><span class="nav-emoji">⚙️</span><span>تنظیمات</span></div>
-<div class="nav-bottom"><div class="nav-item" onclick="doLogout()"><span class="nav-emoji">🚪</span><span>خروج</span></div></div>
+<div class="dash" id="dash">
+<div class="sb">
+<div class="sl"><span class="cs">🐱</span><h2>CAT VPN</h2><small>V2RayNG Panel</small></div>
+<div class="ni a" onclick="go('ov',this)"><span class="ne">📊</span><span>داشبورد</span></div>
+<div class="ni" onclick="go('cf',this)"><span class="ne">🔑</span><span>کانفینگ‌ها</span></div>
+<div class="ni" onclick="go('ap',this)"><span class="ne">📡</span><span>API لینک</span></div>
+<div class="ni" onclick="go('ur',this)"><span class="ne">👥</span><span>کاربران</span></div>
+<div class="ni" onclick="go('sv',this)"><span class="ne">🖥️</span><span>سرورها</span></div>
+<div class="ni" onclick="go('sg',this)"><span class="ne">⚙️</span><span>تنظیمات</span></div>
+<div class="nb"><div class="ni" onclick="logout()"><span class="ne">🚪</span><span>خروج</span></div></div>
 </div>
-<div class="main">
+<div class="mn">
 
 <!-- OVERVIEW -->
-<div class="sec active" id="overview">
-<div class="page-header"><h1>📊 داشبورد</h1><button class="btn btn-gold btn-sm" onclick="openModal('configModal')">+ کانفینگ جدید</button></div>
-<div class="stats">
-<div class="stat"><div class="icon">🔑</div><div class="val" id="sC">0</div><div class="lbl">کانفینگ فعال</div></div>
-<div class="stat"><div class="icon">👥</div><div class="val" id="sU">0</div><div class="lbl">کاربر</div></div>
-<div class="stat"><div class="icon">🖥️</div><div class="val" id="sS">0</div><div class="lbl">سرور آنلاین</div></div>
-<div class="stat"><div class="icon">📊</div><div class="val" id="sT">0</div><div class="lbl">ترافیک (GB)</div></div>
+<div class="sc a" id="ov">
+<div class="ph"><h1>📊 داشبورد</h1><button class="btn bg bs" onclick="om('cm')">+ کانفینگ جدید</button></div>
+<div class="sts">
+<div class="st"><div class="ic">🔑</div><div class="vl" id="s1">0</div><div class="lb">کانفینگ فعال</div></div>
+<div class="st"><div class="ic">👥</div><div class="vl" id="s2">0</div><div class="lb">کاربر</div></div>
+<div class="st"><div class="ic">🖥️</div><div class="vl" id="s3">0</div><div class="lb">سرور آنلاین</div></div>
+<div class="st"><div class="ic">📊</div><div class="vl" id="s4">0</div><div class="lb">ترافیک (GB)</div></div>
 </div>
-<div class="card">
-<div class="card-head"><h3>🔑 آخرین کانفینگ‌ها</h3></div>
-<table><thead><tr><th>نام</th><th>پروتکل</th><th>وضعیت</th><th>پینگ</th><th>عملیات</th></tr></thead><tbody id="tO"></tbody></table>
-</div>
+<div class="cd"><div class="ch"><h3>🔑 آخرین کانفینگ‌ها</h3></div>
+<table><thead><tr><th>نام</th><th>پروتکل</th><th>وضعیت</th><th>پینگ</th><th>عملیات</th></tr></thead><tbody id="tO"></tbody></table></div>
 </div>
 
 <!-- CONFIGS -->
-<div class="sec" id="configs">
-<div class="page-header"><h1>🔑 مدیریت کانفینگ‌ها</h1><button class="btn btn-gold btn-sm" onclick="openModal('configModal')">+ کانفینگ جدید</button></div>
-<div class="card">
-<table><thead><tr><th>نام</th><th>پروتکل</th><th>سرور</th><th>پورت</th><th>وضعیت</th><th>پینگ</th><th>عملیات</th></tr></thead><tbody id="tC"></tbody></table>
-</div>
+<div class="sc" id="cf">
+<div class="ph"><h1>🔑 مدیریت کانفینگ‌ها</h1><button class="btn bg bs" onclick="om('cm')">+ کانفینگ جدید</button></div>
+<div class="cd"><table><thead><tr><th>نام</th><th>پروتکل</th><th>سرور</th><th>پورت</th><th>وضعیت</th><th>پینگ</th><th>عملیات</th></tr></thead><tbody id="tC"></tbody></table></div>
 </div>
 
-<!-- API LINK -->
-<div class="sec" id="apilink">
-<div class="page-header"><h1>📡 API لینک</h1></div>
-<div class="card" style="padding:24px;">
-<p style="font-size:13px;color:var(--text2);margin-bottom:16px;">لینک API برای اتصال V2RayNG و سایر کلاینت‌ها:</p>
-<div class="api-box" onclick="copyApi(this)">
-<div class="api-label">📋 کلیک برای کپی</div>
-<span id="apiLink">-</span>
-</div>
-<div style="margin-top:20px;">
-<h3 style="font-size:14px;margin-bottom:12px;">لینک‌های اشتراک:</h3>
-<div id="subLinks"></div>
-</div>
+<!-- API -->
+<div class="sc" id="ap">
+<div class="ph"><h1>📡 API لینک</h1></div>
+<div class="cd" style="padding:24px">
+<p style="font-size:13px;color:var(--text2);margin-bottom:16px">لینک API برای اتصال V2RayNG:</p>
+<div class="ab" onclick="cpa(this)"><div class="al">📋 کلیک برای کپی</div><span id="apiL">-</span></div>
+<h3 style="font-size:14px;margin:20px 0 12px">لینک‌های اشتراک:</h3>
+<div id="subL"></div>
 </div>
 </div>
 
 <!-- USERS -->
-<div class="sec" id="users">
-<div class="page-header"><h1>👥 مدیریت کاربران</h1><button class="btn btn-gold btn-sm" onclick="openModal('userModal')">+ کاربر جدید</button></div>
-<div class="card">
-<table><thead><tr><th>نام</th><th>ایمیل</th><th>وضعیت</th><th>عملیات</th></tr></thead><tbody id="tU"></tbody></table>
-</div>
+<div class="sc" id="ur">
+<div class="ph"><h1>👥 مدیریت کاربران</h1><button class="btn bg bs" onclick="om('um')">+ کاربر جدید</button></div>
+<div class="cd"><table><thead><tr><th>نام</th><th>ایمیل</th><th>وضعیت</th><th>عملیات</th></tr></thead><tbody id="tU"></tbody></table></div>
 </div>
 
 <!-- SERVERS -->
-<div class="sec" id="servers">
-<div class="page-header"><h1>🖥️ مدیریت سرورها</h1><button class="btn btn-gold btn-sm" onclick="openModal('serverModal')">+ سرور جدید</button></div>
-<div class="card">
-<table><thead><tr><th>نام</th><th>IP</th><th>لوکیشن</th><th>پورت</th><th>وضعیت</th><th>عملیات</th></tr></thead><tbody id="tS"></tbody></table>
-</div>
+<div class="sc" id="sv">
+<div class="ph"><h1>🖥️ مدیریت سرورها</h1><button class="btn bg bs" onclick="om('sm')">+ سرور جدید</button></div>
+<div class="cd"><table><thead><tr><th>نام</th><th>IP</th><th>لوکیشن</th><th>پورت</th><th>وضعیت</th><th>عملیات</th></tr></thead><tbody id="tS"></tbody></table></div>
 </div>
 
 <!-- SETTINGS -->
-<div class="sec" id="settings">
-<div class="page-header"><h1>⚙️ تنظیمات</h1></div>
-<div class="card" style="padding:24px;">
-<div class="form-group"><label>نام پنل</label><input type="text" value="CAT VPN" id="setPanel"></div>
-<div class="form-group"><label>رمز عبور جدید</label><input type="password" placeholder="رمز جدید" id="setPass"></div>
-<button class="btn btn-gold" style="width:auto" onclick="toast('تنظیمات ذخیره شد! ✓')">💾 ذخیره</button>
+<div class="sc" id="sg">
+<div class="ph"><h1>⚙️ تنظیمات</h1></div>
+<div class="cd" style="padding:24px">
+<div class="fg"><label>نام پنل</label><input type="text" value="CAT VPN"></div>
+<div class="fg"><label>رمز عبور جدید</label><input type="password" placeholder="رمز جدید"></div>
+<button class="btn bg" style="width:auto" onclick="toast('تنظیمات ذخیره شد! ✓')">💾 ذخیره</button>
 </div>
 </div>
 
-</div>
-</div>
+</div></div>
 
 <!-- CONFIG MODAL -->
-<div class="modal-bg" id="configModal">
-<div class="modal">
-<h2>🐱 ساخت کانفینگ جدید</h2>
-<form onsubmit="createConfig(event)">
-<div class="row2">
-<div class="form-group"><label>نام</label><input type="text" id="cName" placeholder="مثال: آلمان 1" required></div>
-<div class="form-group"><label>پروتکل</label><select id="cProto"><option>VLESS</option><option>VMess</option><option>Trojan</option><option>Shadowsocks</option></select></div>
+<div class="mb" id="cm">
+<div class="mo">
+<h2>🐱 ساخت کانفینگ</h2>
+<form onsubmit="cc(event)">
+<div class="r2">
+<div class="fg"><label>نام</label><input type="text" id="cn" placeholder="آلمان 1" required></div>
+<div class="fg"><label>پروتکل</label><select id="cp"><option>VLESS</option><option>VMess</option><option>Trojan</option><option>Shadowsocks</option></select></div>
 </div>
-<div class="row2">
-<div class="form-group"><label>سرور</label><select id="cSrv"></select></div>
-<div class="form-group"><label>پورت</label><input type="number" id="cPort" value="443"></div>
+<div class="r2">
+<div class="fg"><label>سرور</label><select id="cs"></select></div>
+<div class="fg"><label>پورت</label><input type="number" id="cpo" value="443"></div>
 </div>
-<div class="form-group"><label>UUID</label><input type="text" id="cUUID" readonly></div>
-<div class="row2">
-<div class="form-group"><label>تاریخ انقضا</label><input type="date" id="cExp"></div>
-<div class="form-group"><label>ترافیک (GB)</label><input type="number" id="cTraffic" value="0" placeholder="0=نامحدود"></div>
+<div class="fg"><label>UUID</label><input type="text" id="cu" readonly></div>
+<div class="r2">
+<div class="fg"><label>تاریخ انقضا</label><input type="date" id="ce"></div>
+<div class="fg"><label>ترافیک (GB)</label><input type="number" id="ct" value="0" placeholder="0=نامحدود"></div>
 </div>
-<div class="form-group"><label>توضیحات</label><input type="text" id="cDesc" placeholder="اختیاری"></div>
-<div class="modal-foot">
-<button type="button" class="btn btn-ghost" onclick="closeModal('configModal')">لغو</button>
-<button type="submit" class="btn btn-gold">🐱 ساخت</button>
-</div>
+<div class="fg"><label>توضیحات</label><input type="text" id="cds" placeholder="اختیاری"></div>
+<div class="mf"><button type="button" class="btn bh" onclick="cm('cm')">لغو</button><button type="submit" class="btn bg">🐱 ساخت</button></div>
 </form>
-<div id="cResult" style="display:none;margin-top:16px;">
-<div class="api-box" onclick="copyApi(this)">
-<div class="api-label">📋 کلیک برای کپی لینک</div>
-<span id="cLink"></span>
-</div>
-</div>
+<div id="cR" style="display:none;margin-top:16px"><div class="ab" onclick="cpa(this)"><div class="al">📋 کلیک برای کپی لینک</div><span id="cL"></span></div></div>
 </div>
 </div>
 
 <!-- USER MODAL -->
-<div class="modal-bg" id="userModal">
-<div class="modal">
-<h2>👥 افزودن کاربر</h2>
-<form onsubmit="createUser(event)">
-<div class="form-group"><label>نام</label><input type="text" id="uName" required></div>
-<div class="form-group"><label>ایمیل</label><input type="email" id="uEmail" required></div>
-<div class="modal-foot">
-<button type="button" class="btn btn-ghost" onclick="closeModal('userModal')">لغو</button>
-<button type="submit" class="btn btn-gold">افزودن</button>
-</div>
-</form>
-</div>
+<div class="mb" id="um">
+<div class="mo"><h2>👥 افزودن کاربر</h2>
+<form onsubmit="cu(event)">
+<div class="fg"><label>نام</label><input type="text" id="un" required></div>
+<div class="fg"><label>ایمیل</label><input type="email" id="ue" required></div>
+<div class="mf"><button type="button" class="btn bh" onclick="cm('um')">لغو</button><button type="submit" class="btn bg">افزودن</button></div>
+</form></div>
 </div>
 
 <!-- SERVER MODAL -->
-<div class="modal-bg" id="serverModal">
-<div class="modal">
-<h2>🖥️ افزودن سرور</h2>
-<form onsubmit="createServer(event)">
-<div class="form-group"><label>نام</label><input type="text" id="sName" placeholder="آلمان 1" required></div>
-<div class="row2">
-<div class="form-group"><label>IP</label><input type="text" id="sIP" placeholder="1.2.3.4" required></div>
-<div class="form-group"><label>لوکیشن</label><input type="text" id="sLoc" placeholder="فرانکفورت"></div>
+<div class="mb" id="sm">
+<div class="mo"><h2>🖥️ افزودن سرور</h2>
+<form onsubmit="csr(event)">
+<div class="fg"><label>نام</label><input type="text" id="sn" placeholder="آلمان 2" required></div>
+<div class="r2">
+<div class="fg"><label>IP</label><input type="text" id="si" placeholder="1.2.3.4" required></div>
+<div class="fg"><label>لوکیشن</label><input type="text" id="sloc" placeholder="فرانکفورت"></div>
 </div>
-<div class="form-group"><label>پورت پیش‌فرض</label><input type="number" id="sPort" value="443"></div>
-<div class="modal-foot">
-<button type="button" class="btn btn-ghost" onclick="closeModal('serverModal')">لغو</button>
-<button type="submit" class="btn btn-gold">افزودن</button>
-</div>
-</form>
-</div>
+<div class="fg"><label>پورت</label><input type="number" id="spo" value="443"></div>
+<div class="mf"><button type="button" class="btn bh" onclick="cm('sm')">لغو</button><button type="submit" class="btn bg">افزودن</button></div>
+</form></div>
 </div>
 
-<div class="toast" id="toast"></div>
+<div class="tst" id="tst"></div>
 
 <script>
-const LS=k=>JSON.parse(localStorage.getItem('cat_'+k)||'[]');
-const SS=(k,v)=>localStorage.setItem('cat_'+k,JSON.stringify(v));
-let configs=LS('configs'),users=LS('users'),servers=LS('servers');
-if(!servers||!servers.length){servers=[
-{id:genId(),name:'آلمان 1',ip:'de1.catos.app',location:'فرانکفورت',port:'443',status:'online'},
-{id:genId(),name:'آمریکا 1',ip:'us1.catos.app',location:'آمریکا',port:'443',status:'online'},
-{id:genId(),name:' هلند 1',ip:'nl1.catos.app',location:'آمستردام',port:'443',status:'online'}
-];SS('servers',servers)}
-const genId=()=>Date.now()+Math.random().toString(36).slice(2,7);
+const G=(k)=>{try{return JSON.parse(localStorage.getItem('c_'+k)||'[]')}catch(e){return[]}};
+const S=(k,v)=>localStorage.setItem('c_'+k,JSON.stringify(v));
+let cfgs=G('c'),usrs=G('u'),srvs=G('s');
+const gid=()=>Date.now()+Math.random().toString(36).slice(2,7);
 function uuid(){return'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return(c==='x'?r:(r&0x3|0x8)).toString(16)})}
 
-function doLogin(e){e.preventDefault();var pw=document.getElementById('loginPass').value.trim();console.log('pw:',pw);if(pw==='admin'){document.getElementById('loginPage').style.display='none';document.getElementById('dash').style.display='block';refresh()}else alert('رمز اشتباه!')}
-function doLogout(){document.getElementById('dash').style.display='none';document.getElementById('loginPage').style.display='flex'}
-function go(id,el){document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));el.classList.add('active')}
-function openModal(id){document.getElementById(id).classList.add('show');document.getElementById('cResult').style.display='none';document.getElementById('cUUID').value=uuid();const sel=document.getElementById('cSrv');if(!servers||!servers.length){servers=[{id:genId(),name:'آلمان 1',ip:'de1.catos.app',location:'فرانکفورت',port:'443',status:'online'},{id:genId(),name:'آمریکا 1',ip:'us1.catos.app',location:'آمریکا',port:'443',status:'online'},{id:genId(),name:' هلند 1',ip:'nl1.catos.app',location:'آمستردام',port:'443',status:'online'}];SS('servers',servers)}servers.map(s=>'<option value="'+s.ip+'">'+s.name+' ('+s.ip+')</option>').join(''):'<option>سروری نیست</option>'}
-function closeModal(id){document.getElementById(id).classList.remove('show')}
-function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)}
+if(!srvs||!srvs.length){
+srvs=[
+{id:gid(),name:'🇩🇪 آلمان 1',ip:'de1.catos.app',loc:'فرانکفورت',port:'443',st:'on'},
+{id:gid(),name:'🇩🇪 آلمان 2',ip:'de2.catos.app',loc:'برلین',port:'443',st:'on'},
+{id:gid(),name:'🇩🇪 آلمان 3',ip:'de3.catos.app',loc:'مونیخ',port:'443',st:'on'},
+{id:gid(),name:'🇺🇸 آمریکا 1',ip:'us1.catos.app',loc:'نیویورک',port:'443',st:'on'},
+{id:gid(),name:'🇺🇸 آمریکا 2',ip:'us2.catos.app',loc:'لس‌آنجلس',port:'443',st:'on'},
+{id:gid(),name:'🇺🇸 آمریکا 3',ip:'us3.catos.app',loc:'شیکاگو',port:'443',st:'on'},
+{id:gid(),name:'🇳🇱 هلند 1',ip:'nl1.catos.app',loc:'آمستردام',port:'443',st:'on'},
+{id:gid(),name:'🇳🇱 هلند 2',ip:'nl2.catos.app',loc:'روتردام',port:'443',st:'on'},
+{id:gid(),name:'🇫🇷 فرانسه 1',ip:'fr1.catos.app',loc:'پاریس',port:'443',st:'on'},
+{id:gid(),name:'🇬🇧 انگلیس 1',ip:'uk1.catos.app',loc:'لندن',port:'443',st:'on'},
+{id:gid(),name:'🇬🇧 انگلیس 2',ip:'uk2.catos.app',loc:'منچستر',port:'443',st:'on'},
+{id:gid(),name:'🇯🇵 ژاپن 1',ip:'jp1.catos.app',loc:'توکیو',port:'443',st:'on'},
+{id:gid(),name:'🇸🇬 سنگاپور 1',ip:'sg1.catos.app',loc:'سنگاپور',port:'443',st:'on'},
+{id:gid(),name:'🇰🇷 کره 1',ip:'kr1.catos.app',loc:'سئول',port:'443',st:'on'},
+{id:gid(),name:'🇹🇷 ترکیه 1',ip:'tr1.catos.app',loc:'استانبول',port:'443',st:'on'},
+{id:gid(),name:'🇨🇦 کانادا 1',ip:'ca1.catos.app',loc:'تورنتو',port:'443',st:'on'},
+{id:gid(),name:'🇦🇪 امارات 1',ip:'ae1.catos.app',loc:'دبی',port:'443',st:'on'},
+{id:gid(),name:'🇮🇳 هند 1',ip:'in1.catos.app',loc:'بمبئی',port:'443',st:'on'},
+{id:gid(),name:'🇧🇷 برزیل 1',ip:'br1.catos.app',loc:'سائوپائولو',port:'443',st:'on'},
+{id:gid(),name:'🇮🇹 ایتالیا 1',ip:'it1.catos.app',loc:'رم',port:'443',st:'on'}
+];S('s',srvs)}
 
-function createConfig(e){
-e.preventDefault();
-const c={id:genId(),name:document.getElementById('cName').value,protocol:document.getElementById('cProto').value,server:document.getElementById('cSrv').value,port:document.getElementById('cPort').value,uuid:document.getElementById('cUUID').value,expiry:document.getElementById('cExp').value,traffic:document.getElementById('cTraffic').value,desc:document.getElementById('cDesc').value,status:'active',ping:'—',created:new Date().toLocaleDateString('fa-IR')};
-configs.push(c);SS('configs',configs);
-const link=c.protocol.toLowerCase()+'://'+c.uuid+'@'+c.server+':'+c.port+'?type=tcp&security=tls&sni='+c.server+'#'+encodeURIComponent(c.name);
-document.getElementById('cLink').textContent=link;document.getElementById('cResult').style.display='block';
-toast('🐱 کانفینگ ساخته شد!');refresh()
-}
-function createUser(e){e.preventDefault();users.push({id:genId(),name:document.getElementById('uName').value,email:document.getElementById('uEmail').value,status:'active'});SS('users',users);closeModal('userModal');toast('کاربر اضافه شد!');refresh()}
-function createServer(e){e.preventDefault();servers.push({id:genId(),name:document.getElementById('sName').value,ip:document.getElementById('sIP').value,location:document.getElementById('sLoc').value,port:document.getElementById('sPort').value,status:'online'});SS('servers',servers);closeModal('serverModal');toast('سرور اضافه شد!');refresh()}
-function del(t,id){if(!confirm('حذف بشه؟'))return;if(t==='config')configs=configs.filter(x=>x.id!==id);if(t==='user')users=users.filter(x=>x.id!==id);if(t==='server')servers=servers.filter(x=>x.id!==id);SS('configs',configs);SS('users',users);SS('servers',servers);toast('حذف شد! ✓');refresh()}
-function toggleConfig(id){const c=configs.find(x=>x.id===id);if(!c)return;c.status=c.status==='active'?'disabled':'active';SS('configs',configs);toast(c.status==='active'?'فعال شد':'غیرفعال شد');refresh()}
+function login(e){e.preventDefault();if(document.getElementById('pw').value.trim()==='admin.18.19'){document.getElementById('lp').style.display='none';document.getElementById('dash').style.display='block';refresh()}else alert('❌ رمز اشتباه!')}
+function logout(){document.getElementById('dash').style.display='none';document.getElementById('lp').style.display='flex'}
+function go(id,el){document.querySelectorAll('.sc').forEach(s=>s.classList.remove('a'));document.getElementById(id).classList.add('a');document.querySelectorAll('.ni').forEach(n=>n.classList.remove('a'));el.classList.add('a')}
+function om(id){document.getElementById(id).classList.add('show');document.getElementById('cR').style.display='none';document.getElementById('cu').value=uuid();const sel=document.getElementById('cs');sel.innerHTML=srvs&&srvs.length?srvs.filter(s=>s.st==='on').map(s=>'<option value="'+s.ip+'">'+s.name+' ('+s.ip+')</option>').join(''):'<option>سروری نیست</option>'}
+function cm(id){document.getElementById(id).classList.remove('show')}
+function toast(m){const t=document.getElementById('tst');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)}
 
-function pingConfig(id){
-const c=configs.find(x=>x.id===id);if(!c)return;
-c.ping='...ping';SS('configs',configs);refresh();
-const start=Date.now();
-fetch('https://'+c.server+':'+c.port,{mode:'no-cors'}).catch(()=>{}).finally(()=>{
-const ms=Date.now()-start;
-const p=ms<200?Math.floor(Math.random()*40)+15:ms;
-c.ping=p+'ms';SS('configs',configs);refresh();toast('پینگ '+c.name+': '+p+'ms')});
-setTimeout(()=>{if(c.ping==='...ping'){c.ping=' timeouts';SS('configs',configs);refresh()}},5000)
-}
+function cc(e){e.preventDefault();const c={id:gid(),name:document.getElementById('cn').value,proto:document.getElementById('cp').value,srv:document.getElementById('cs').value,port:document.getElementById('cpo').value,uuid:document.getElementById('cu').value,exp:document.getElementById('ce').value,traf:document.getElementById('ct').value,desc:document.getElementById('cds').value,st:'on',ping:'—',date:new Date().toLocaleDateString('fa-IR')};cfgs.push(c);S('c',cfgs);const lk=c.proto.toLowerCase()+'://'+c.uuid+'@'+c.srv+':'+c.port+'?type=tcp&security=tls&sni='+c.srv+'#'+encodeURIComponent(c.name);document.getElementById('cL').textContent=lk;document.getElementById('cR').style.display='block';toast('🐱 کانفینگ ساخته شد!');refresh()}
+function cu(e){e.preventDefault();usrs.push({id:gid(),name:document.getElementById('un').value,email:document.getElementById('ue').value,st:'on'});S('u',usrs);cm('um');toast('کاربر اضافه شد!');refresh()}
+function csr(e){e.preventDefault();srvs.push({id:gid(),name:document.getElementById('sn').value,ip:document.getElementById('si').value,loc:document.getElementById('sloc').value,port:document.getElementById('spo').value,st:'on'});S('s',srvs);cm('sm');toast('سرور اضافه شد!');refresh()}
+function del(t,id){if(!confirm('حذف بشه؟'))return;if(t==='c')cfgs=cfgs.filter(x=>x.id!==id);if(t==='u')usrs=usrs.filter(x=>x.id!==id);if(t==='s')srvs=srvs.filter(x=>x.id!==id);S('c',cfgs);S('u',usrs);S('s',srvs);toast('حذف شد! ✓');refresh()}
+function tg(id){const c=cfgs.find(x=>x.id===id);if(!c)return;c.st=c.st==='on'?'off':'on';S('c',cfgs);toast(c.st==='on'?'فعال شد':'غیرفعال شد');refresh()}
 
-function getConfigLink(c){
-return c.protocol.toLowerCase()+'://'+c.uuid+'@'+c.server+':'+c.port+'?type=tcp&security=tls&sni='+c.server+'#'+encodeURIComponent(c.name)
-}
-function copyConfig(id){const c=configs.find(x=>x.id===id);if(!c)return;navigator.clipboard.writeText(getConfigLink(c));toast('لینک کپی شد! ✓')}
-function copyApi(el){navigator.clipboard.writeText(el.querySelector('span').textContent);el.querySelector('.api-label').textContent='✅ کپی شد!';setTimeout(()=>el.querySelector('.api-label').textContent='📋 کلیک برای کپی',2000);toast('کپی شد!')}
+function png(id){const c=cfgs.find(x=>x.id===id);if(!c)return;c.ping='...';S('c',cfgs);refresh();const s=Date.now();fetch('https://'+c.srv+':'+c.port,{mode:'no-cors'}).catch(()=>{}).finally(()=>{const ms=Date.now()-s;const p=ms<200?Math.floor(Math.random()*40)+15:ms;c.ping=p+'ms';S('c',cfgs);refresh();toast('پینگ '+c.name+': '+p+'ms')});setTimeout(()=>{if(c.ping==='...'){c.ping='timeout';S('c',cfgs);refresh()}},5000)}
 
-function showConfig(id){
-const c=configs.find(x=>x.id===id);if(!c)return;
-const link=getConfigLink(c);
-alert('🐱 '+c.name+'\n\nپروتکل: '+c.protocol+'\nسرور: '+c.server+'\nپورت: '+c.port+'\nUUID: '+c.uuid+'\nوضعیت: '+(c.status==='active'?'فعال':'غیرفعال')+'\nانقضا: '+(c.expiry||'نامحدود')+'\n\nلینک:\n'+link)
-}
-
-const badge=s=>s==='active'?'<span class="badge b-active">فعال</span>':s==='disabled'?'<span class="badge b-off">غیرفعال</span>':'<span class="badge b-online">آنلاین</span>';
-const pingColor=p=>{if(p==='—')return'var(--text2)';const n=parseInt(p);return n<50?'var(--success)':n<100?'var(--warning)':'var(--danger)'};
-
-function exportConfig(id){const c=configs.find(x=>x.id===id);if(!c)return;navigator.clipboard.writeText(getConfigLink(c));toast('لینک خروجی کپی شد! ✓')}
+function glk(c){return c.proto.toLowerCase()+'://'+c.uuid+'@'+c.srv+':'+c.port+'?type=tcp&security=tls&sni='+c.srv+'#'+encodeURIComponent(c.name)}
+function cpk(id){const c=cfgs.find(x=>x.id===id);if(!c)return;navigator.clipboard.writeText(glk(c));toast('لینک کپی شد! ✓')}
+function cpa(el){navigator.clipboard.writeText(el.querySelector('span').textContent);el.querySelector('.al').textContent='✅ کپی شد!';setTimeout(()=>el.querySelector('.al').textContent='📋 کلیک برای کپی',2000);toast('کپی شد!')}
+function exk(id){const c=cfgs.find(x=>x.id===id);if(!c)return;navigator.clipboard.writeText(glk(c));toast('خروجی کپی شد! ✓')}
+function vw(id){const c=cfgs.find(x=>x.id===id);if(!c)return;alert('🐱 '+c.name+'\n\nپروتکل: '+c.proto+'\nسرور: '+c.srv+'\nپورت: '+c.port+'\nUUID: '+c.uuid+'\nوضعیت: '+(c.st==='on'?'فعال':'غیرفعال')+'\nانقضا: '+(c.exp||'نامحدود')+'\n\nلینک:\n'+glk(c))}
+const bd=s=>s==='on'?'<span class="bg2 ba">فعال</span>':'<span class="bg2 bo2">غیرفعال</span>';
+const pc=p=>{if(p==='—'||p==='...')return'var(--text2)';const n=parseInt(p);if(isNaN(n))return'var(--warn)';return n<50?'var(--ok)':n<100?'var(--warn)':'var(--no)'};
 
 function refresh(){
-document.getElementById('sC').textContent=configs.filter(c=>c.status==='active').length;
-document.getElementById('sU').textContent=users.length;
-document.getElementById('sS').textContent=servers.filter(s=>s.status==='online').length;
-document.getElementById('sT').textContent=configs.reduce((a,c)=>a+parseInt(c.traffic||0),0);
+document.getElementById('s1').textContent=cfgs.filter(c=>c.st==='on').length;
+document.getElementById('s2').textContent=usrs.length;
+document.getElementById('s3').textContent=srvs.filter(s=>s.st==='on').length;
+document.getElementById('s4').textContent=cfgs.reduce((a,c)=>a+parseInt(c.traf||0),0);
 
-document.getElementById('tO').innerHTML=configs.length?configs.slice(-5).reverse().map(c=>'<tr><td>'+c.name+'</td><td>'+c.protocol+'</td><td>'+badge(c.status)+'</td><td class="ping-val" style="color:'+pingColor(c.ping)+'">'+c.ping+'</td><td class="actions"><button class="btn btn-sm btn-gold" onclick="pingConfig(\''+c.id+'\')">📡 پینگ</button><button class="btn btn-sm btn-ghost" onclick="copyConfig(\''+c.id+'\')">📋 کپی</button><button class="btn btn-sm btn-ghost" onclick="toggleConfig(\''+c.id+'\')">'+(c.status==='active'?'⛔':'✅')+'</button><button class="btn btn-sm btn-danger" onclick="del(\'config\',\''+c.id+'\')">🗑️</button></td></tr>').join(''):'<tr><td colspan="5" style="text-align:center;color:var(--text2);padding:40px">🐱 هنوز کانفینگی نیست</td></tr>';
+document.getElementById('tO').innerHTML=cfgs.length?cfgs.slice(-5).reverse().map(c=>'<tr><td>'+c.name+'</td><td>'+c.proto+'</td><td>'+bd(c.st)+'</td><td class="pv" style="color:'+pc(c.ping)+'">'+c.ping+'</td><td class="ac"><button class="btn bs bg" onclick="png(\''+c.id+'\')">📡 پینگ</button><button class="btn bs bh" onclick="cpk(\''+c.id+'\')">📋 کپی</button><button class="btn bs bh" onclick="tg(\''+c.id+'\')">'+(c.st==='on'?'⛔':'✅')+'</button><button class="btn bs bd" onclick="del(\'c\',\''+c.id+'\')">🗑️ حذف</button></td></tr>').join(''):'<tr><td colspan="5" style="text-align:center;color:var(--text2);padding:40px">🐱 هنوز کانفینگی نیست</td></tr>';
 
-document.getElementById('tC').innerHTML=configs.length?configs.map(c=>'<tr><td>'+c.name+'</td><td>'+c.protocol+'</td><td>'+c.server+'</td><td>'+c.port+'</td><td>'+badge(c.status)+'</td><td class="ping-val" style="color:'+pingColor(c.ping)+'">'+c.ping+'</td><td class="actions"><button class="btn btn-sm btn-gold" onclick="pingConfig(\''+c.id+'\')">📡 پینگ</button><button class="btn btn-sm btn-ghost" onclick="showConfig(\''+c.id+'\')">👁️ جزئیات</button><button class="btn btn-sm btn-ghost" onclick="copyConfig(\''+c.id+'\')">📋 کپی</button><button class="btn btn-sm btn-ghost" onclick="toggleConfig(\''+c.id+'\')">'+(c.status==='active'?'⛔':'✅')+'</button><button class="btn btn-sm btn-danger" onclick="del(\'config\',\''+c.id+'\')">🗑️</button></td></tr>').join(''):'<tr><td colspan="7" style="text-align:center;color:var(--text2);padding:40px">🐱 هنوز کانفینگی نیست</td></tr>';
+document.getElementById('tC').innerHTML=cfgs.length?cfgs.map(c=>'<tr><td>'+c.name+'</td><td>'+c.proto+'</td><td>'+c.srv+'</td><td>'+c.port+'</td><td>'+bd(c.st)+'</td><td class="pv" style="color:'+pc(c.ping)+'">'+c.ping+'</td><td class="ac"><button class="btn bs bg" onclick="png(\''+c.id+'\')">📡 پینگ</button><button class="btn bs bh" onclick="vw(\''+c.id+'\')">👁️ جزئیات</button><button class="btn bs bh" onclick="cpk(\''+c.id+'\')">📋 کپی</button><button class="btn bs bh" onclick="exk(\''+c.id+'\')">📤 خروجی</button><button class="btn bs bh" onclick="tg(\''+c.id+'\')">'+(c.st==='on'?'⛔':'✅')+'</button><button class="btn bs bd" onclick="del(\'c',\''+c.id+'\')">🗑️ حذف</button></td></tr>').join(''):'<tr><td colspan="7" style="text-align:center;color:var(--text2);padding:40px">🐱 هنوز کانفینگی نیست</td></tr>';
 
-document.getElementById('tU').innerHTML=users.length?users.map(u=>'<tr><td>'+u.name+'</td><td>'+u.email+'</td><td>'+badge(u.status)+'</td><td class="actions"><button class="btn btn-sm btn-danger" onclick="del(\'user\',\''+u.id+'\')">🗑️ حذف</button></td></tr>').join(''):'<tr><td colspan="4" style="text-align:center;color:var(--text2);padding:40px">هنوز کاربری نیست</td></tr>';
+document.getElementById('tU').innerHTML=usrs.length?usrs.map(u=>'<tr><td>'+u.name+'</td><td>'+u.email+'</td><td>'+bd(u.st)+'</td><td class="ac"><button class="btn bs bd" onclick="del(\'u\',\''+u.id+'\')">🗑️ حذف</button></td></tr>').join(''):'<tr><td colspan="4" style="text-align:center;color:var(--text2);padding:40px">هنوز کاربری نیست</td></tr>';
 
-document.getElementById('tS').innerHTML=servers.length?servers.map(s=>'<tr><td>'+s.name+'</td><td style="direction:ltr;text-align:right">'+s.ip+'</td><td>'+s.location+'</td><td>'+s.port+'</td><td>'+badge(s.status)+'</td><td class="actions"><button class="btn btn-sm btn-danger" onclick="del(\'server\',\''+s.id+'\')">🗑️ حذف</button></td></tr>').join(''):'<tr><td colspan="6" style="text-align:center;color:var(--text2);padding:40px">هنوز سروری نیست</td></tr>';
+document.getElementById('tS').innerHTML=srvs.length?srvs.map(s=>'<tr><td>'+s.name+'</td><td style="direction:ltr;text-align:right">'+s.ip+'</td><td>'+s.loc+'</td><td>'+s.port+'</td><td>'+bd(s.st)+'</td><td class="ac"><button class="btn bs bd" onclick="del(\'s\',\''+s.id+'\')">🗑️ حذف</button></td></tr>').join(''):'<tr><td colspan="6" style="text-align:center;color:var(--text2);padding:40px">هنوز سروری نیست</td></tr>';
 
-// API
-if(configs.length){
-const first=configs[0];
-document.getElementById('apiLink').textContent='cat-vpn-api://panel/api/configs?key='+first.uuid.substring(0,8);
-document.getElementById('subLinks').innerHTML=configs.map(c=>'<div class="api-box" style="margin-bottom:8px" onclick="copyApi(this)"><div class="api-label">📋 '+c.name+' ('+c.protocol+')</div><span>'+getConfigLink(c)+'</span></div>').join('');
-}
+if(cfgs.length){const f=cfgs[0];document.getElementById('apiL').textContent='cat-vpn-api://panel/api/configs?key='+f.uuid.substring(0,8);document.getElementById('subL').innerHTML=cfgs.map(c=>'<div class="ab" style="margin-bottom:8px" onclick="cpa(this)"><div class="al">📋 '+c.name+' ('+c.proto+')</div><span>'+glk(c)+'</span></div>').join('')}
 }
 refresh();
 </script>
