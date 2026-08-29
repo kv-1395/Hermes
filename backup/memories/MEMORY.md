@@ -16,4 +16,4 @@ GitHub account: kv-1395, repo: Hermes (https://github.com/kv-1395/Hermes). Backu
 §
 Panels hosted on GitHub Pages at https://kv-1395.github.io/Hermes/ (branch gh-pages). Netlify anonymous deploys exhausted for the day.
 §
-VPN panel project 'CAT VPN' (cat-panel/) — gold + white light theme, Vazirmatn font, default servers (de1/us1/nl1.catos.app), VLESS protocol, port 443. Password: admin.
+CAT VPN panel abandoned by user ("اون رو ولش بابا"). Don't bring it up.
