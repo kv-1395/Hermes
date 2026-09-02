@@ -17,3 +17,5 @@ GitHub account: kv-1395, repo: Hermes (https://github.com/kv-1395/Hermes). Backu
 Panels hosted on GitHub Pages at https://kv-1395.github.io/Hermes/ (branch gh-pages). Netlify anonymous deploys exhausted for the day.
 §
 CAT VPN panel abandoned by user ("اون رو ولش بابا"). Don't bring it up.
+§
+Linux RAM health checks: use MemAvailable (not MemFree) for accurate RAM status. MemFree is always low because Linux uses free RAM for buffers/cache. MemAvailable = how much RAM is actually usable by applications. When reporting system health, always show MemAvailable and explain the difference if user asks.
