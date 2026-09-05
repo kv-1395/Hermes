@@ -25,15 +25,15 @@
       "schedule_display": "every 720m",
       "repeat": {
         "times": null,
-        "completed": 38
+        "completed": 39
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-08-18T06:07:14.196734+00:00",
-      "next_run_at": "2026-09-05T22:57:07.192333+00:00",
-      "last_run_at": "2026-09-04T22:56:32.402404+00:00",
+      "next_run_at": "2026-09-06T10:57:41.427561+00:00",
+      "last_run_at": "2026-09-05T10:57:09.600445+00:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -49,10 +49,10 @@
       "enabled_toolsets": null,
       "workdir": null,
       "fire_claim": {
-        "at": "2026-09-05T10:57:07.197410+00:00",
-        "by": "aebb86399c6e:2:42919b2d6414455fa9d9a2d68d4c3058"
+        "at": "2026-09-05T22:57:41.433415+00:00",
+        "by": "aebb86399c6e:2:eb1ee3a41bd84022b8adab0492be30fa"
       }
     }
   ],
-  "updated_at": "2026-09-05T10:57:07.197581+00:00"
+  "updated_at": "2026-09-05T22:57:41.433580+00:00"
 }
