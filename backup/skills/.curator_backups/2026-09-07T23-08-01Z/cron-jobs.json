@@ -32,7 +32,7 @@
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-08-18T06:07:14.196734+00:00",
-      "next_run_at": "2026-09-08T23:00:34.026361+00:00",
+      "next_run_at": "2026-09-08T11:00:03.363368+00:00",
       "last_run_at": "2026-09-07T23:00:03.363368+00:00",
       "last_status": "ok",
       "last_error": null,
@@ -48,11 +48,8 @@
       },
       "enabled_toolsets": null,
       "workdir": null,
-      "fire_claim": {
-        "at": "2026-09-08T11:00:34.031205+00:00",
-        "by": "aebb86399c6e:2:8f3cf40b316346b5b6524ffe02f72582"
-      }
+      "fire_claim": null
     }
   ],
-  "updated_at": "2026-09-08T11:00:34.031297+00:00"
+  "updated_at": "2026-09-07T23:00:03.363515+00:00"
 }
